@@ -19,10 +19,12 @@
     "eject": "react-scripts eject",
     "lint": "eslint **/*.js",
     "lint:fix": "prettier **/*.js --write",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "cm": "cz"
   },
   "husky": {
     "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true",
       "pre-commit": "lint-staged"
     }
   },
@@ -49,6 +51,7 @@
     ]
   },
   "devDependencies": {
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-standard": "^16.0.3",
@@ -58,5 +61,10 @@
     "eslint-plugin-react": "^7.26.1",
     "husky": "^7.0.2",
     "lint-staged": "^11.2.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
