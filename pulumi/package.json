@@ -1,5 +1,5 @@
 {
-  "name": "skand-pulumi",
+  "name": "skand-demo",
   "main": "index.js",
   "dependencies": {
     "@pulumi/pulumi": "^3.0.0",
